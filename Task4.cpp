@@ -9,16 +9,17 @@ struct Task{
  
 void addTask(vector<Task>& tasks){ 
     Task task; 
-    cout << "Enter the description of the task: "; 
+    cout << "Enter the description of the task: " << endl; 
+    cin.ignore(); 
     getline(cin, task.descriptionOfTask); 
     task.done = false; 
     tasks.push_back(task); 
-    cout << "Task added"; 
+    cout << "Task added" << endl; 
 } 
  
 void deleteTask(vector<Task>& tasks){ 
     int n; 
-    cout << "Enter the number of the removing task: "; 
+    cout << "Enter the number of the removing task: " << endl; 
     cin >> n; 
     if(tasks.empty()){ 
         cout << "Nothing to delete!" << endl; 
@@ -32,7 +33,7 @@ void deleteTask(vector<Task>& tasks){
  
 void updateTask(vector<Task>& tasks){ 
     int n; 
-    cout << "Enter the number of the updating task: "; 
+    cout << "Enter the number of the updating task: " << endl; 
     cin >> n; 
     if(tasks.empty()){ 
         cout << "Nothing to update!" << endl; 
@@ -40,6 +41,7 @@ void updateTask(vector<Task>& tasks){
         cout << "No such task to update!" << endl; 
     }else{ 
         cout << "Enter the new description of the task: " << endl; 
+        cin.ignore(); 
         getline(cin, tasks[n-1].descriptionOfTask); 
         cout << "Task updated!"; 
     } 
